@@ -2,6 +2,7 @@
   <%= @entry.meal_type %> &ndash; <%= DateTime.now.to_fs(:nice_date)%>
 <% end %>
 
+<%= params %>
 
 <div class="columns mt-6 is-centered">
   <div class="columns is-one-third">
@@ -10,17 +11,30 @@
         Meal type:
         <%= @entry.meal_type %>
       </p>
-      <% if @entry != @entry.meal_type %>
-        <%= render @entry %>
-      <%end%>
+
+      <div class="panel-block">
+        Calories: <%= @entry.calories %>
+      </div>
+
+      <div class="panel-block">
+        Proteins: <%= @entry.proteins %>
+      </div>
+
+      <div class="panel-block">
+        carbohydrates: <%= @entry.carbohydrates %>
+      </div>
+
+      <div class="panel-block">
+        Fats: <%= @entry.fats %>
+      </div>
+
+      <div class="columns is-mobile">
+        <div class="column">
+          <%= link_to "Edit this entry", edit_entry_path(@entry), class: "button is-success" %>
+          <%= button_to "Delete", @entry, method: :delete, class: "button is-danger" %>
+        </div>
+      </div>
+
     </nav>
   </div>
-</div>
-
-
-<div>
-  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
-  <%= link_to "Back to entries", entries_path %>
-
-  <%= button_to "Destroy this entry", @entry, method: :delete %>
 </div>
