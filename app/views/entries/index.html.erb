@@ -19,11 +19,15 @@
           </div>
         </div>
         <div class="card-footer">
-          <%= link_to "Show", entry, class: "card-footer-item"%>
-          <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
-          <%= link_to "Destroy", entry, method: :delete, data: {confirm: "Are you sure?" }, class: "card-footer-item"%>
+          <%= link_to "Show", entry, class: "card-footer-item has-text-weight-bold"%>
+          <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item has-text-weight-bold" %>
+          <%= link_to "Destroy", entry, method: :delete, data: {confirm: "Are you sure?" }, class: "card-footer-item has-text-weight-bold"%>
         </div>
       </div>
     </div>
   <% end %>
+</div>
+
+<div class="columns is-centered mt-6">
+  <%= link_to"View all entries", archives_index_path, class: "button is-link is-outlined is-centered"%>
 </div>
